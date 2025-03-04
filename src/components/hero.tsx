@@ -9,12 +9,12 @@ export function Hero() {
     <div  className="flex md:flex-col-reverse  items-center justify-center px-6 md:px-12 pt-16 md:pt-24 pb-16 min-h-[80vh]">
       <motion.div 
         className="max-w-4xl mx-auto text-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: ready ? 1 : 0 }}
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: ready ? 1 : 0, x: ready ? 1 : 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
         <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r to-sky-700 from-sky-500">Seamless, Safe</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r to-sky-700 from-purple-200">Seamless, Safe</span>
           <br />
             CRYPTO
         </h1>

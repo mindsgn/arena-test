@@ -27,13 +27,13 @@ export function InfiniteMarquee({ items, direction = "left", speed = "normal" }:
   }
 
   return (
-    <Marquee direction={direction} speed={actualSpeed}>
-      {duplicatedItems.map((item, index) => (
-        <div key={index} className="flex items-center space-x-2 text-white mx-4">
-          {item.icon && <span>{item.icon}</span>}
-          <span>{item.text}</span>
-        </div>
-      ))}
-    </Marquee>
+       <Marquee direction={direction} speed={actualSpeed}>
+          {duplicatedItems.map((item, index) => (
+            <div key={index} className="flex items-center space-x-2 text-white mx-4">
+              {item.icon && <span>{item.icon}</span>}
+              <span>{item.text}</span>
+            </div>
+          ))}
+        </Marquee>
   );
 }

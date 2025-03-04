@@ -15,6 +15,7 @@ export function Background() {
 
   return (
     <div className="absolute inset-0 z-0 filter blur">
+      <div className="absolute inset-0 bg-black/20"></div>
       <div>
         <div className="absolute top-[30%] right-[15%] w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-purple-600 to-purple-800 opacity-70"></div>
         <div className="absolute bottom-[10%] right-[25%] w-20 h-20 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-purple-400 to-back opacity-70"></div>
