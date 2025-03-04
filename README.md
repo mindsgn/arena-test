@@ -67,7 +67,3 @@ This project is a landing page for Block Money, a web3 payments solution. It's b
     ```bash
     npm run start  # or yarn start
     ```
-
-## Environment Variables
-
-The project may require certain environment variables to be set.  Create a `.env.local` file in the root of the project and add the necessary variables.  For example:
