@@ -1,12 +1,26 @@
+
+import { useState, useEffect } from "react";
 import { OrbitingOrb } from "./orb"
+import Spline from '@splinetool/react-spline';
+import { useStore } from '@/store';
 
 export function Background() {
+  const { setReady } = useStore()
+  const [isClient, setIsClient] = useState(false);
+
+   useEffect(() => {
+    setIsClient(true);
+    setReady();
+  }, []);
+
   return (
     <div className="absolute inset-0 z-0 filter blur">
       <div>
         <div className="absolute top-[30%] right-[15%] w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-purple-600 to-purple-800 opacity-70"></div>
         <div className="absolute bottom-[10%] right-[25%] w-20 h-20 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-purple-400 to-back opacity-70"></div>
       </div>
+
+       {isClient && <Spline scene="https://prod.spline.design/EhYJshFr9ILMZiha/scene.splinecode" />}
 
       <OrbitingOrb
         position="top-[10%] left-[5%]"

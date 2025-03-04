@@ -12,7 +12,7 @@ export function Navbar() {
         </Link>
       </div>
 
-      <div className="hidden md:flex items-center space-x-4">
+      <div className="hidden lg:flex items-center space-x-4">
         <Button variant="ghost" asChild>
           <Link href="#products">Products</Link>
         </Button>
@@ -28,7 +28,7 @@ export function Navbar() {
       </div>
 
       <Button variant="outline" asChild>
-        <Link href="https://ibc.fun" className="flex items-center">
+        <Link href="#" className="flex items-center">
           GET STARTED <span className="ml-1">→</span>
         </Link>
       </Button>

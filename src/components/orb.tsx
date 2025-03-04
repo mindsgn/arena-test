@@ -1,24 +1,44 @@
-import type React from "react"
-import { cn } from "@/lib/utils"
+import { motion } from "framer-motion";
 
 interface OrbitingOrbProps {
-  position: string
-  size: string
-  color: string
-  icon?: React.ReactNode
-  opacity?: string
+  position: string;
+  size: string;
+  color: string;
+  icon?: React.ReactNode;
+  opacity?: string;
 }
 
-export function OrbitingOrb({ position, size, color, icon, opacity = "opacity-80" }: OrbitingOrbProps) {
+export function OrbitingOrb({
+  position,
+  size,
+  color,
+  icon,
+  opacity = "opacity-100",
+}: OrbitingOrbProps) {
+  const orbitVariants = {
+    start: {
+      x: 0,
+      y: 0,
+    },
+    orbit: {
+      x: [0, 5, 0, -5, 0],
+      y: [5, 0, -5, 0, 5],
+      transition: {
+        duration: 10,
+        ease: "linear",
+        repeat: Infinity,
+      },
+    },
+  };
+
   return (
-    <div
-      className={cn(
-        `absolute ${position} ${size} rounded-full ${opacity} flex items-center justify-center z-10`,
-        color,
-      )}
+    <motion.div
+      className={`absolute ${position} ${size} rounded-full ${color} ${opacity} flex items-center justify-center`}
+      variants={orbitVariants}
+      initial="start"
+      animate="orbit"
     >
-      {icon && <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">{icon}</div>}
-    </div>
-  )
+      {icon}
+    </motion.div>
+  );
 }
-
